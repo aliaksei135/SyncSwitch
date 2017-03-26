@@ -45,7 +45,7 @@ public class SyncSwitchService extends Service {
                 @Override
                 public void run() {
                     //Default sync duration of 5 mins
-                    long syncDuration = prefs.getLong("syncDuration", 300000L);
+                    long syncDuration = prefs.getLong("syncDuration", 300000);
 
                     //Disable wifi, assuming fallback to mobile data
                     wifiManager.setWifiEnabled(false);
