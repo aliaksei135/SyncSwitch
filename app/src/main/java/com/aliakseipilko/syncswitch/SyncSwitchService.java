@@ -76,6 +76,7 @@ public class SyncSwitchService extends Service {
                     handler.postDelayed(offTask, syncInterval);
                 }
             };
+            handler.post(onTask);
         }
     }
 }
