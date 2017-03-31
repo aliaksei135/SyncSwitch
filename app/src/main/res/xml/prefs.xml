@@ -1,5 +1,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:key="pref_static_text"
+        android:persistent="false"
+        android:selectable="false"
+        android:summary="@string/pref_static"
+        android:title="" />
+
     <SwitchPreference
         android:defaultValue="true"
         android:key="isEnabled"
