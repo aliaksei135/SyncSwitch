@@ -11,8 +11,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 public class SyncSwitchService extends Service {
+
+    private static final String TAG = "SyncSwitchService";
 
     private SharedPreferences prefs;
 
@@ -37,6 +40,8 @@ public class SyncSwitchService extends Service {
         if (!isEnabled) {
             stopSelf();
         } else {
+            Log.d(TAG, "Started Service");
+
             final WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
             final AccountManager accountManager = AccountManager.get(this);
 
@@ -44,6 +49,8 @@ public class SyncSwitchService extends Service {
             offTask = new Runnable() {
                 @Override
                 public void run() {
+                    Log.d(TAG, "Running offTask");
+
                     //Default sync duration of 5 mins
                     long syncDuration = prefs.getLong("syncDuration", 300000);
 
@@ -67,6 +74,8 @@ public class SyncSwitchService extends Service {
             onTask = new Runnable() {
                 @Override
                 public void run() {
+                    Log.d(TAG, "Running onTask");
+
                     //Default sync interval of 30 mins
                     long syncInterval = prefs.getLong("syncInterval", 1800000);
 
@@ -78,5 +87,14 @@ public class SyncSwitchService extends Service {
             };
             handler.post(onTask);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "Service stopped");
+
+        // Clean up thread handler
+        handler.removeCallbacksAndMessages(null);
     }
 }

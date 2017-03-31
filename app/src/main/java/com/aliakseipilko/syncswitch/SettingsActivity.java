@@ -81,7 +81,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     SwitchPreference pref = (SwitchPreference) preference;
-                    if (pref.isEnabled()) {
+                    if (pref.isChecked()) {
                         getActivity().startService(new Intent(getActivity(), SyncSwitchService.class));
                     } else {
                         getActivity().stopService(new Intent(getActivity(), SyncSwitchService.class));
