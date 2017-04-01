@@ -11,6 +11,12 @@ I am not responsible for you getting in trouble with your supervisor, you losing
 
 ***Data charges may apply.***
 
+# Download
+<a href="https://play.google.com/store/apps/details?id=com.aliakseipilko.syncswitch">
+<img alt="Get it on Google Play"
+src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+</a>
+
 # License
 
     Copyright 2017 Aliaksei Pilko
