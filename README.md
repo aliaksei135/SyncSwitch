@@ -17,6 +17,9 @@ I am not responsible for you getting in trouble with your supervisor, you losing
 src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
 
+# Build Status
+master: [![Build Status](https://travis-ci.org/aliaksei135/SyncSwitch.svg?branch=master)](https://travis-ci.org/aliaksei135/SyncSwitch)
+
 # License
 
     Copyright 2017 Aliaksei Pilko
